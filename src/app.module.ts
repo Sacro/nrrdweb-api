@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm'
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 
+import { ControlRecordModule } from './control-record/control-record.module';
+
 @Module({
-  imports: [TypeOrmModule.forRoot()],
+  imports: [TypeOrmModule.forRoot(), ControlRecordModule],
   controllers: [AppController],
-  components: [],
+  components: []
 })
 export class ApplicationModule {}
